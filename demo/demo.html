@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>ezCipher Demo</title>
+</head>
+<body>
+	
+	<p><b>Live Example:</b> <a href="http://www.ezramorse.com/#about-ezra-morse">http://www.ezramorse.com/#about-ezra-morse</a></p>
+
+	<h1>Automated Transition</h1>
+	<ul class="cipher">
+        	<li>
+                	<p class="title">First Slide</p>
+                	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem</p>
+        	</li>
+        	<li>
+                	<p class="title">Second Slide</p>
+                	<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por</p>
+                	<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p>
+                	<p>Additional Paragraph</p>
+        	</li>
+	</ul>
+
+	<h1>Manual Transition</h1>
+	<ul class="cipherManual">
+        	<li>
+                	<p class="title">First Slide</p>
+                	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem</p>
+        	</li>
+        	<li>
+                	<p class="title">Second Slide</p>
+                	<p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por</p>
+                	<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p>
+                	<p>Additional Paragraph</p>
+        	</li>
+	</ul>
+	<a href="javascript:void(0);" class="first">First Slide</a>
+	<a href="javascript:void(0);" class="second">Second Slide</a>
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript">window.jQuery || document.write('<script src="http://www.ezramorse.com/js/jquery-2.1.0.min.js"><\/script>')</script>
+	<script src="../src/ezCipher.js" type="text/javascript"></script>
+	<script>
+
+	$( document ).ready(function () {
+		// Initialize Cipher
+		var cipher = $('.cipher').ezCipher();
+
+		// Go to second slide
+		cipher.transition(1);
+
+		// Initialize Cipher
+		var cipherManual = $('.cipherManual').ezCipher({time:1});
+		$('.first').click(function() {
+			cipherManual.transition(0);
+		});
+		
+		$('.second').click(function() {
+			cipherManual.transition(1);
+		});
+		
+
+	});
+	</script>
+
+</body>
+</html>
